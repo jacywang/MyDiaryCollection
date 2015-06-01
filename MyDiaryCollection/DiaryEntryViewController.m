@@ -18,9 +18,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-
-    [self performSegueWithIdentifier:@"showLogin" sender:self];
     
+    PFUser *currentUser = [PFUser currentUser];
+
+    if (currentUser) {
+        
+        NSLog(@"%@", currentUser.username);
+        
+    }
+    else {
+        
+        [self performSegueWithIdentifier:@"showLogin" sender:self];
+    }
     
 
     
@@ -31,4 +40,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)logoutButtonPressed:(UIBarButtonItem *)sender {
+    
+    [PFUser logOut];
+    [self performSegueWithIdentifier:@"showLogin" sender:self];
+    
+}
 @end

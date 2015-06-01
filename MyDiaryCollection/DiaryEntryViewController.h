@@ -14,5 +14,10 @@
 @interface DiaryEntryViewController : UIViewController
 
 
+
+- (IBAction)logoutButtonPressed:(UIBarButtonItem *)sender;
+
+
+
 @end
 
