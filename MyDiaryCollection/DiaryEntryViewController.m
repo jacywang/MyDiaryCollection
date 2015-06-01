@@ -6,17 +6,19 @@
 //  Copyright (c) 2015 JWANG. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "DiaryEntryViewController.h"
 
-@interface ViewController ()
+@interface DiaryEntryViewController ()
 
 @end
 
-@implementation ViewController
+@implementation DiaryEntryViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [self performSegueWithIdentifier:@"showLogin" sender:self];
+    
 }
 
 - (void)didReceiveMemoryWarning {
