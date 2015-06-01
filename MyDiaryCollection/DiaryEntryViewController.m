@@ -9,7 +9,7 @@
 #import "DiaryEntryViewController.h"
 
 
-@interface DiaryEntryViewController ()
+@interface DiaryEntryViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
 
 @end
 
@@ -38,6 +38,48 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)imagePickerButtonPressed:(UIButton *)sender {
+    
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        
+        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Choose" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Camera", @"Photo Library", nil];
+        
+        actionSheet.tag = 0;
+        
+        [actionSheet showInView:self.view];
+    
+    }
+    else {
+        
+        UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+        imagePicker.delegate = self;
+        imagePicker.allowsEditing = YES;
+        [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+        [self presentViewController:imagePicker animated:YES completion:nil];
+    }
+    
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.delegate = self;
+    imagePicker.allowsEditing = YES;
+    
+    switch (buttonIndex) {
+        case 0:
+            [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
+            [self presentViewController:imagePicker animated:YES completion:nil];
+            break;
+        case 1:
+            [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+            [self presentViewController:imagePicker animated:YES completion:nil];
+            
+        default:
+            break;
+    }
 }
 
 - (IBAction)logoutButtonPressed:(UIBarButtonItem *)sender {

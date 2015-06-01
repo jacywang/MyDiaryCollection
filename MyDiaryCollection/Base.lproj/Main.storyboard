@@ -35,7 +35,39 @@
                     <view key="view" contentMode="scaleToFill" id="Rsw-gU-H3w">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="US4-r0-rc3">
+                                <rect key="frame" x="16" y="72" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="E5P-CX-Xfl"/>
+                                    <constraint firstAttribute="width" constant="120" id="sKM-3x-fHI"/>
+                                </constraints>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="imagePickerButtonPressed:" destination="CpF-yo-CXE" eventType="touchUpInside" id="psn-pc-PvN"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgj-8B-Af6">
+                                <rect key="frame" x="144" y="72" width="440" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="AcM-VS-oZQ"/>
+                                </constraints>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xgj-8B-Af6" firstAttribute="trailing" secondItem="Rsw-gU-H3w" secondAttribute="trailingMargin" id="4z0-db-H3o"/>
+                            <constraint firstItem="US4-r0-rc3" firstAttribute="top" secondItem="Bl7-bG-qyy" secondAttribute="bottom" constant="8" id="Bc7-W4-lRE"/>
+                            <constraint firstItem="xgj-8B-Af6" firstAttribute="leading" secondItem="US4-r0-rc3" secondAttribute="trailing" constant="8" id="IC6-ZZ-6ei"/>
+                            <constraint firstItem="xgj-8B-Af6" firstAttribute="top" secondItem="Bl7-bG-qyy" secondAttribute="bottom" constant="8" id="les-ZH-hGu"/>
+                            <constraint firstItem="US4-r0-rc3" firstAttribute="leading" secondItem="Rsw-gU-H3w" secondAttribute="leadingMargin" id="rgS-O0-zCV"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="s6h-L3-E4s">
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="Yq7-dU-C2W">
@@ -45,6 +77,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="diaryTextView" destination="xgj-8B-Af6" id="7cF-Uo-X9t"/>
+                        <outlet property="imagePickerButton" destination="US4-r0-rc3" id="Ww2-OV-Khu"/>
                         <segue destination="8f9-ZS-B7t" kind="show" identifier="showLogin" id="KXM-jI-2Yi"/>
                     </connections>
                 </viewController>

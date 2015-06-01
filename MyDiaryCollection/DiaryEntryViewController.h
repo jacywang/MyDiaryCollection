@@ -14,6 +14,15 @@
 @interface DiaryEntryViewController : UIViewController
 
 
+@property (weak, nonatomic) IBOutlet UITextView *diaryTextView;
+
+
+@property (weak, nonatomic) IBOutlet UIButton *imagePickerButton;
+
+
+
+- (IBAction)imagePickerButtonPressed:(UIButton *)sender;
+
 
 - (IBAction)logoutButtonPressed:(UIBarButtonItem *)sender;
 
