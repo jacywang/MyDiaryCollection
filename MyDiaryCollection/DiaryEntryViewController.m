@@ -31,8 +31,6 @@
         [self performSegueWithIdentifier:@"showLogin" sender:self];
     }
     
-
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -71,15 +69,15 @@
     switch (buttonIndex) {
         case 0:
             [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
-            [self presentViewController:imagePicker animated:YES completion:nil];
             break;
         case 1:
             [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-            [self presentViewController:imagePicker animated:YES completion:nil];
             
         default:
             break;
     }
+    
+    [self presentViewController:imagePicker animated:YES completion:nil];
 }
 
 - (IBAction)logoutButtonPressed:(UIBarButtonItem *)sender {
@@ -87,5 +85,14 @@
     [PFUser logOut];
     [self performSegueWithIdentifier:@"showLogin" sender:self];
     
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([[segue identifier] isEqualToString:@"showLogin"]) {
+        
+        [segue.destinationViewController setHidesBottomBarWhenPushed:YES];
+        
+    }
 }
 @end
