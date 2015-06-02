@@ -7,6 +7,7 @@
 //
 
 #import "SignupViewController.h"
+#import "DiaryEntryViewController.h"
 
 @interface SignupViewController ()
 
@@ -63,9 +64,12 @@
                 UIAlertView *alerView = [[UIAlertView alloc] initWithTitle:@"Sorry!" message:[error.userInfo objectForKey:@"error"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
                 
                 [alerView show];
+                
             }
             else {
-                [self.navigationController popToRootViewControllerAnimated:YES];
+                
+                [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+                
             }
             
         }];
