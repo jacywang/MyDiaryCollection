@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Diary Entry View Controller-->
@@ -80,7 +81,66 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GQF-0v-z15" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1162" y="46"/>
+            <point key="canvasLocation" x="1176" y="46"/>
+        </scene>
+        <!--Diary Detail View Controller-->
+        <scene sceneID="Dwu-5i-Uip">
+            <objects>
+                <viewController id="AsI-Vh-kbc" customClass="DiaryDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YmE-5Q-Og6"/>
+                        <viewControllerLayoutGuide type="bottom" id="cx4-1K-Xab"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UV8-3Q-5vB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WEt-Sf-4Vt">
+                                <rect key="frame" x="16" y="72" width="568" height="300"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0NF-FW-1lj">
+                                <rect key="frame" x="16" y="394" width="568" height="198"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yf4-Lc-mhL">
+                                <rect key="frame" x="284" y="374" width="300" height="18"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yf4-Lc-mhL" firstAttribute="top" secondItem="WEt-Sf-4Vt" secondAttribute="bottom" constant="2" id="82p-6f-bnd"/>
+                            <constraint firstItem="WEt-Sf-4Vt" firstAttribute="height" secondItem="UV8-3Q-5vB" secondAttribute="height" multiplier="0.5" id="BkX-7p-qGj"/>
+                            <constraint firstAttribute="trailing" secondItem="WEt-Sf-4Vt" secondAttribute="trailing" constant="16" id="Llg-aq-Wjt"/>
+                            <constraint firstItem="0NF-FW-1lj" firstAttribute="top" secondItem="yf4-Lc-mhL" secondAttribute="bottom" constant="2" id="MjY-7a-DKg"/>
+                            <constraint firstItem="WEt-Sf-4Vt" firstAttribute="top" secondItem="YmE-5Q-Og6" secondAttribute="bottom" constant="8" id="OAC-xM-iUX"/>
+                            <constraint firstItem="WEt-Sf-4Vt" firstAttribute="leading" secondItem="UV8-3Q-5vB" secondAttribute="leading" constant="16" id="Sj2-M1-duF"/>
+                            <constraint firstAttribute="trailing" secondItem="yf4-Lc-mhL" secondAttribute="trailing" constant="16" id="ZP2-vL-bML"/>
+                            <constraint firstItem="yf4-Lc-mhL" firstAttribute="width" secondItem="UV8-3Q-5vB" secondAttribute="width" multiplier="0.5" id="gCf-BK-CD1"/>
+                            <constraint firstItem="0NF-FW-1lj" firstAttribute="leading" secondItem="UV8-3Q-5vB" secondAttribute="leading" constant="16" id="gip-os-5dw"/>
+                            <constraint firstItem="0NF-FW-1lj" firstAttribute="top" secondItem="WEt-Sf-4Vt" secondAttribute="bottom" constant="8" id="oWe-EG-wCb"/>
+                            <constraint firstAttribute="trailing" secondItem="0NF-FW-1lj" secondAttribute="trailing" constant="16" id="qtF-hW-ud4"/>
+                            <constraint firstAttribute="bottom" secondItem="0NF-FW-1lj" secondAttribute="bottom" constant="8" id="w1g-ha-5qG"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="oWe-EG-wCb"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="yf4-Lc-mhL" id="1xZ-80-mZ2"/>
+                        <outlet property="diaryImageView" destination="WEt-Sf-4Vt" id="ibO-Tf-sIK"/>
+                        <outlet property="diaryTextView" destination="0NF-FW-1lj" id="FU3-En-U4Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zhx-ID-gPI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1988" y="707"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0Nv-yZ-2G8">
@@ -184,7 +244,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="L84-m2-T3u" kind="relationship" relationship="viewControllers" id="dqt-oi-9SG"/>
-                        <segue destination="wnw-dr-tig" kind="relationship" relationship="viewControllers" id="jTY-xW-49j"/>
+                        <segue destination="EWz-PI-EES" kind="relationship" relationship="viewControllers" id="jTY-xW-49j"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CwZ-OV-fG3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -210,7 +270,7 @@
             </objects>
             <point key="canvasLocation" x="350" y="46"/>
         </scene>
-        <!--Collection-->
+        <!--Collection View Controller-->
         <scene sceneID="lq3-4s-RNy">
             <objects>
                 <collectionViewController id="wnw-dr-tig" customClass="CollectionViewController" sceneMemberID="viewController">
@@ -257,6 +317,7 @@
                                 <connections>
                                     <outlet property="dateLabel" destination="vbT-LS-oSn" id="NAT-hk-ki8"/>
                                     <outlet property="diaryImageView" destination="omV-yT-i8g" id="a1p-2a-XtN"/>
+                                    <segue destination="AsI-Vh-kbc" kind="show" identifier="showDiaryDetail" id="tPQ-t9-AVz"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -265,11 +326,11 @@
                             <outlet property="delegate" destination="wnw-dr-tig" id="adm-Lt-FsZ"/>
                         </connections>
                     </collectionView>
-                    <tabBarItem key="tabBarItem" title="Collection" id="wp8-Qx-DfY"/>
+                    <navigationItem key="navigationItem" id="1Qk-8o-1tI"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fSv-I3-JgG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="350" y="707"/>
+            <point key="canvasLocation" x="1162" y="707"/>
         </scene>
         <!--Signup-->
         <scene sceneID="kvi-TE-FGs">
@@ -333,6 +394,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RRP-Wf-pVW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3310" y="-554"/>
+        </scene>
+        <!--Collection-->
+        <scene sceneID="Yej-qc-LvA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EWz-PI-EES" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Collection" id="wp8-Qx-DfY"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Liq-Ai-Ay4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wnw-dr-tig" kind="relationship" relationship="rootViewController" id="Paz-cf-qVX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H9V-qP-FYy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="350" y="707"/>
         </scene>
     </scenes>
     <resources>

@@ -31,6 +31,7 @@
 		9C286FD21B1CDB8500B0EFEE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9C286FD11B1CDB8500B0EFEE /* Images.xcassets */; };
 		9C286FD51B1CDB8500B0EFEE /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C286FD31B1CDB8500B0EFEE /* LaunchScreen.xib */; };
 		9C286FE11B1CDB8500B0EFEE /* MyDiaryCollectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C286FE01B1CDB8500B0EFEE /* MyDiaryCollectionTests.m */; };
+		9CC8AF7B1B1E73C0009EE7A0 /* DiaryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC8AF7A1B1E73C0009EE7A0 /* DiaryDetailViewController.m */; };
 		9CDFE8351B1E6420001A4873 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDFE8341B1E6420001A4873 /* CollectionViewController.m */; };
 		9CDFE8381B1E6673001A4873 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDFE8371B1E6673001A4873 /* CollectionViewCell.m */; };
 /* End PBXBuildFile section */
@@ -79,6 +80,8 @@
 		9C286FDA1B1CDB8500B0EFEE /* MyDiaryCollectionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyDiaryCollectionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C286FDF1B1CDB8500B0EFEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C286FE01B1CDB8500B0EFEE /* MyDiaryCollectionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyDiaryCollectionTests.m; sourceTree = "<group>"; };
+		9CC8AF791B1E73C0009EE7A0 /* DiaryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryDetailViewController.h; sourceTree = "<group>"; };
+		9CC8AF7A1B1E73C0009EE7A0 /* DiaryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryDetailViewController.m; sourceTree = "<group>"; };
 		9CDFE8331B1E6420001A4873 /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
 		9CDFE8341B1E6420001A4873 /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 		9CDFE8361B1E6673001A4873 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
@@ -171,6 +174,8 @@
 				9CDFE8341B1E6420001A4873 /* CollectionViewController.m */,
 				9CDFE8361B1E6673001A4873 /* CollectionViewCell.h */,
 				9CDFE8371B1E6673001A4873 /* CollectionViewCell.m */,
+				9CC8AF791B1E73C0009EE7A0 /* DiaryDetailViewController.h */,
+				9CC8AF7A1B1E73C0009EE7A0 /* DiaryDetailViewController.m */,
 				96B3C5D41B1E580B005E904A /* Diary.h */,
 				96B3C5D51B1E580B005E904A /* Diary.m */,
 				9C286FCE1B1CDB8500B0EFEE /* Main.storyboard */,
@@ -318,6 +323,7 @@
 				9C286FCD1B1CDB8500B0EFEE /* DiaryEntryViewController.m in Sources */,
 				9C286FC41B1CDB8500B0EFEE /* main.m in Sources */,
 				965C41A91B1CFF5300AE6988 /* LoginViewController.m in Sources */,
+				9CC8AF7B1B1E73C0009EE7A0 /* DiaryDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
