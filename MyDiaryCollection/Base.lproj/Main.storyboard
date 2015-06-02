@@ -1,30 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1077" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="huz-Ws-MNZ">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
-        <scene sceneID="Ym6-Bb-8bU">
-            <objects>
-                <viewController id="hDM-7I-BbK" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Fed-gE-az4"/>
-                        <viewControllerLayoutGuide type="bottom" id="P76-Sb-Xgs"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="YfU-o5-e8K">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="aq2-Oq-6yj"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rdM-bQ-rWs" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="351" y="709"/>
-        </scene>
         <!--Diary Entry View Controller-->
         <scene sceneID="q1n-gL-64n">
             <objects>
@@ -204,7 +184,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="L84-m2-T3u" kind="relationship" relationship="viewControllers" id="dqt-oi-9SG"/>
-                        <segue destination="hDM-7I-BbK" kind="relationship" relationship="viewControllers" id="jFD-cn-k4W"/>
+                        <segue destination="wnw-dr-tig" kind="relationship" relationship="viewControllers" id="jTY-xW-49j"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CwZ-OV-fG3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -229,6 +209,67 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aR4-MV-1DJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="350" y="46"/>
+        </scene>
+        <!--Collection-->
+        <scene sceneID="lq3-4s-RNy">
+            <objects>
+                <collectionViewController id="wnw-dr-tig" customClass="CollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="yP2-aA-Lvz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gKK-Mg-Lhz">
+                            <size key="itemSize" width="182" height="159"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="Ny6-lM-9yq" customClass="CollectionViewCell">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="182" height="159"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="omV-yT-i8g">
+                                            <rect key="frame" x="8" y="8" width="166" height="116"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbT-LS-oSn">
+                                            <rect key="frame" x="8" y="130" width="166" height="20"/>
+                                            <color key="backgroundColor" red="0.95294117649999999" green="0.92941176469999998" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" red="0.95294117649999999" green="0.92941176469999998" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="vbT-LS-oSn" firstAttribute="top" secondItem="omV-yT-i8g" secondAttribute="bottom" constant="6" id="FIO-nY-Cv7"/>
+                                    <constraint firstAttribute="bottom" secondItem="omV-yT-i8g" secondAttribute="bottom" constant="35" id="RFP-8T-JzA"/>
+                                    <constraint firstItem="omV-yT-i8g" firstAttribute="top" secondItem="Ny6-lM-9yq" secondAttribute="top" constant="8" id="SMI-oQ-J1g"/>
+                                    <constraint firstAttribute="trailing" secondItem="omV-yT-i8g" secondAttribute="trailing" constant="8" id="TfJ-6z-fGs"/>
+                                    <constraint firstItem="omV-yT-i8g" firstAttribute="leading" secondItem="Ny6-lM-9yq" secondAttribute="leading" constant="8" id="ZQl-Xs-sUp"/>
+                                    <constraint firstItem="vbT-LS-oSn" firstAttribute="leading" secondItem="Ny6-lM-9yq" secondAttribute="leading" constant="8" id="elU-8O-hOF"/>
+                                    <constraint firstAttribute="trailing" secondItem="vbT-LS-oSn" secondAttribute="trailing" constant="8" id="lAT-vY-ncM"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dateLabel" destination="vbT-LS-oSn" id="NAT-hk-ki8"/>
+                                    <outlet property="diaryImageView" destination="omV-yT-i8g" id="a1p-2a-XtN"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="wnw-dr-tig" id="B1k-ba-C0j"/>
+                            <outlet property="delegate" destination="wnw-dr-tig" id="adm-Lt-FsZ"/>
+                        </connections>
+                    </collectionView>
+                    <tabBarItem key="tabBarItem" title="Collection" id="wp8-Qx-DfY"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fSv-I3-JgG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="350" y="707"/>
         </scene>
         <!--Signup-->
         <scene sceneID="kvi-TE-FGs">
