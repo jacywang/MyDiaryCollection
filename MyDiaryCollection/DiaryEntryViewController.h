@@ -16,16 +16,22 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *diaryTextView;
 
-
 @property (weak, nonatomic) IBOutlet UIButton *imagePickerButton;
 
+@property (strong, nonatomic) UIImage *diaryImage;
+
+@property (strong, nonatomic) NSString *diaryText;
+
+@property (strong, nonatomic) CLLocationManager *locationManager;
+
+@property (strong, nonatomic) CLLocation *userLocation;
 
 
 - (IBAction)imagePickerButtonPressed:(UIButton *)sender;
 
-
 - (IBAction)logoutButtonPressed:(UIBarButtonItem *)sender;
 
+- (IBAction)saveDiaryButtonPressed:(UIButton *)sender;
 
 
 @end

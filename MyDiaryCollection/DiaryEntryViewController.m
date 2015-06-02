@@ -9,7 +9,7 @@
 #import "DiaryEntryViewController.h"
 
 
-@interface DiaryEntryViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
+@interface DiaryEntryViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, CLLocationManagerDelegate>
 
 @end
 
@@ -31,11 +31,53 @@
         [self performSegueWithIdentifier:@"showLogin" sender:self];
     }
     
+    self.imagePickerButton.clipsToBounds = YES;
+    self.imagePickerButton.layer.cornerRadius = 10;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)viewWillAppear:(BOOL)animated {
+    if (self.diaryImage) {
+        
+        [self.imagePickerButton setImage:self.diaryImage forState:UIControlStateNormal];
+        
+        self.locationManager = [[CLLocationManager alloc] init];
+        [self.locationManager requestWhenInUseAuthorization];
+        self.locationManager.delegate = self;
+        self.locationManager.desiredAccuracy = 50;
+        self.locationManager.distanceFilter = 50;
+        [self.locationManager startUpdatingLocation];
+        
+        self.userLocation = [[CLLocation alloc] init];
+        
+    } else {
+        
+        [self.imagePickerButton setImage:[UIImage imageNamed:@"icn_picture"] forState:UIControlStateNormal];
+        
+    }
+    
+    [self.imagePickerButton setContentMode:UIViewContentModeScaleAspectFit];
+    
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([[segue identifier] isEqualToString:@"showLogin"]) {
+        
+        [segue.destinationViewController setHidesBottomBarWhenPushed:YES];
+        
+    }
+}
+
+- (IBAction)logoutButtonPressed:(UIBarButtonItem *)sender {
+    
+    [PFUser logOut];
+    [self performSegueWithIdentifier:@"showLogin" sender:self];
+    
+}
+
+- (IBAction)saveDiaryButtonPressed:(UIButton *)sender {
+    self.diaryText = self.diaryTextView.text;    
+    
 }
 
 - (IBAction)imagePickerButtonPressed:(UIButton *)sender {
@@ -60,6 +102,19 @@
     
 }
 
+#pragma mark - UIImagePickerControllerDelegate
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    self.diaryImage = info[UIImagePickerControllerOriginalImage];
+    [self dismissViewControllerAnimated:NO completion:nil];
+}
+
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [self dismissViewControllerAnimated:NO completion:nil];
+}
+
+#pragma mark - UIActionSheetDelegate
+
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
@@ -80,19 +135,15 @@
     [self presentViewController:imagePicker animated:YES completion:nil];
 }
 
-- (IBAction)logoutButtonPressed:(UIBarButtonItem *)sender {
-    
-    [PFUser logOut];
-    [self performSegueWithIdentifier:@"showLogin" sender:self];
-    
+#pragma mark - CLLocationManagerDelegate
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    [self.locationManager stopUpdatingLocation];
+    self.userLocation = [locations lastObject];
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    if ([[segue identifier] isEqualToString:@"showLogin"]) {
-        
-        [segue.destinationViewController setHidesBottomBarWhenPushed:YES];
-        
-    }
+-(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    NSLog(@"Error %@", [error localizedDescription]);
 }
+
 @end
