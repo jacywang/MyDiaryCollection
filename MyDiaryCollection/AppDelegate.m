@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import "Diary.h"
 
 @interface AppDelegate ()
 
@@ -18,6 +19,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    [Diary load];
     
     [Parse enableLocalDatastore];
     [Parse setApplicationId:@"ZMXpo8HJZBUrVRHvVYmre1bXrPhg7jWK5kGpdehJ"

@@ -7,6 +7,7 @@
 //
 
 #import "DiaryEntryViewController.h"
+#import "Diary.h"
 
 
 @interface DiaryEntryViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, CLLocationManagerDelegate>
@@ -77,7 +78,6 @@
 
 - (IBAction)saveDiaryButtonPressed:(UIButton *)sender {
     
-    self.diaryText = self.diaryTextView.text;
     
     NSData *fileData;
     NSString *fileName;
@@ -97,19 +97,28 @@
         }
         else {
             
-            PFObject *diary = [PFObject objectWithClassName:@"Diary"];
-            [diary setObject:[[PFUser currentUser] objectId] forKey:@"userID"];
-            [diary setObject:file forKey:@"imageFile"];
-            [diary setObject:self.diaryText forKey:@"diaryText"];
-            [diary setObject:point forKey:@"location"];
+            Diary *diary = [Diary object];
+            diary.userID = [[PFUser currentUser] objectId];
+            diary.imageFile = file;
+            diary.diaryText = self.diaryTextView.text;
+            diary.location = point;
             [diary saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                
                 if (succeeded) {
                     
-                    self.diaryTextView.text = nil;
-                    self.diaryImage = nil;
+                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Success" message:@"Your diary entry is saved" preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+                    [alertController addAction:defaultAction];
+                    [self presentViewController:alertController animated:YES completion:^{
+                        
+                        self.diaryTextView.text = nil;
+                        self.diaryImage = nil;
+                        
+                        [self.tabBarController setSelectedIndex:1];
+                        
+                    }];
                     
-                    [self.tabBarController setSelectedIndex:1];
+                    
                     
                 }
                 else {

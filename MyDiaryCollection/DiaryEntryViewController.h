@@ -20,8 +20,6 @@
 
 @property (strong, nonatomic) UIImage *diaryImage;
 
-@property (strong, nonatomic) NSString *diaryText;
-
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
 @property (strong, nonatomic) CLLocation *userLocation;
