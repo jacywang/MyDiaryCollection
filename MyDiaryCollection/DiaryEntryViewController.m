@@ -76,7 +76,57 @@
 }
 
 - (IBAction)saveDiaryButtonPressed:(UIButton *)sender {
-    self.diaryText = self.diaryTextView.text;    
+    
+    self.diaryText = self.diaryTextView.text;
+    
+    NSData *fileData;
+    NSString *fileName;
+    
+    PFGeoPoint *point = [PFGeoPoint geoPointWithLatitude:self.userLocation.coordinate.latitude longitude:self.userLocation.coordinate.longitude];
+    
+    fileData = UIImagePNGRepresentation(self.diaryImage);
+    fileName = @"image.png";
+    
+    PFFile *file = [PFFile fileWithName:fileName data:fileData];
+    [file saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+       
+        if (error) {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"An error occurred" message:@"Please save your Diary Entry again" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alertView show];
+            
+        }
+        else {
+            
+            PFObject *diary = [PFObject objectWithClassName:@"Diary"];
+            [diary setObject:[[PFUser currentUser] objectId] forKey:@"userID"];
+            [diary setObject:file forKey:@"imageFile"];
+            [diary setObject:self.diaryText forKey:@"diaryText"];
+            [diary setObject:point forKey:@"location"];
+            [diary saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+               
+                if (succeeded) {
+                    
+                    self.diaryTextView.text = nil;
+                    self.diaryImage = nil;
+                    
+                    [self.tabBarController setSelectedIndex:1];
+                    
+                }
+                else {
+                    
+                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"An error occurred" message:@"Please save your Diary Entry again" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+                    [alertView show];
+                    
+                }
+                
+                
+            }];
+        }
+        
+    }];
+    
+
+    
     
 }
 
