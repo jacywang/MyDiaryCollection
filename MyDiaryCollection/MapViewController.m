@@ -17,7 +17,7 @@
 
 @property (nonatomic, strong) CLLocation *currentLocation;
 
-
+@property (nonatomic, strong) NSMutableArray *diaryCollection;
 
 
 @end
@@ -43,25 +43,51 @@
     self.mapView.delegate = self;
     
     
+
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
+    PFQuery *query = [PFQuery queryWithClassName:@"Diary"];
+    [query orderByDescending:@"createdAt"];
+    [query whereKey:@"userID" equalTo:[[PFUser currentUser] objectId]];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error) {
+            NSLog(@"Error: %@", error.userInfo);
+        }
+        else {
+            self.diaryCollection = [NSMutableArray arrayWithArray:objects];
+            [self addAnnotationView];
+        }
+    }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)addAnnotationView {
+    
+    for (Diary *diary in self.diaryCollection) {
+        
+        PFGeoPoint *point = [diary valueForKey:@"location"];
+        
+        CLLocation *location = [[CLLocation alloc] initWithLatitude:point.latitude longitude:point.longitude];
+        
+        MKPointAnnotation *marker = [[MKPointAnnotation alloc] init];
+        marker.coordinate = CLLocationCoordinate2DMake(diary.location.latitude, diary.location.longitude);
+        
+        CLGeocoder *geocode = [[CLGeocoder alloc] init];
+        [geocode reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
+            
+            CLPlacemark *placemark = [placemarks firstObject];
+            [marker setTitle: placemark.name];
+            [self.mapView addAnnotation:marker];
+        }];
+        
+
+    }
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-#pragma mark - LocationDelegate
+#pragma mark - CLLocationManager Delegate
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
     
@@ -83,9 +109,31 @@
     
 }
 
+#pragma mark - MKMapView Delegate
+
+-(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    
+    if (annotation == self.mapView.userLocation) {
+        return nil;
+    }
+    
+    static NSString *annotationIdentifier = @"diaryLocation";
+    MKPinAnnotationView* pinView = (MKPinAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:annotationIdentifier];
+    
+    if (!pinView) {
+        pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:annotationIdentifier];
+    }
+    
+    pinView.canShowCallout = YES;
+    pinView.pinColor = MKPinAnnotationColorRed;
+    pinView.calloutOffset = CGPointMake(-7, 0);
+    
+    return pinView;
+}
 
 
-#pragma mark - TableViewDataSource
+
+#pragma mark - TableView DataSource
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
