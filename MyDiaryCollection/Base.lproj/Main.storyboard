@@ -140,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zhx-ID-gPI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1988" y="707"/>
+            <point key="canvasLocation" x="2218" y="1131"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0Nv-yZ-2G8">
@@ -190,13 +190,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account ?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nG5-7a-hFb">
-                                <rect key="frame" x="16" y="241" width="187.5" height="20.5"/>
+                                <rect key="frame" x="16" y="241" width="188" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3me-uA-BPh">
-                                <rect key="frame" x="218.5" y="237" width="55" height="30"/>
+                                <rect key="frame" x="219" y="237" width="55" height="30"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -245,6 +245,7 @@
                     <connections>
                         <segue destination="L84-m2-T3u" kind="relationship" relationship="viewControllers" id="dqt-oi-9SG"/>
                         <segue destination="EWz-PI-EES" kind="relationship" relationship="viewControllers" id="jTY-xW-49j"/>
+                        <segue destination="ehk-V1-km6" kind="relationship" relationship="viewControllers" id="YrN-21-YAE"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CwZ-OV-fG3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -413,6 +414,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H9V-qP-FYy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="350" y="707"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="d4w-Uj-BCs">
+            <objects>
+                <viewController id="ehk-V1-km6" customClass="MapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jaW-of-E3h"/>
+                        <viewControllerLayoutGuide type="bottom" id="4wN-Uy-xga"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LZz-Q7-4N5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="VB5-0E-pue">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                            </mapView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Sxh-Ms-dL2">
+                                <rect key="frame" x="0.0" y="300" width="600" height="251"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ehk-V1-km6" id="Z64-Zx-FZl"/>
+                                    <outlet property="delegate" destination="ehk-V1-km6" id="Ryu-D8-Lwt"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VB5-0E-pue" firstAttribute="leading" secondItem="LZz-Q7-4N5" secondAttribute="leadingMargin" constant="-16" id="Au4-R2-P8w"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Sxh-Ms-dL2" secondAttribute="trailing" constant="-16" id="Brt-Jx-rqx"/>
+                            <constraint firstItem="VB5-0E-pue" firstAttribute="top" secondItem="LZz-Q7-4N5" secondAttribute="topMargin" id="FT6-gy-7C2"/>
+                            <constraint firstItem="4wN-Uy-xga" firstAttribute="top" secondItem="Sxh-Ms-dL2" secondAttribute="bottom" id="MOf-cO-ASz"/>
+                            <constraint firstItem="Sxh-Ms-dL2" firstAttribute="leading" secondItem="LZz-Q7-4N5" secondAttribute="leadingMargin" constant="-16" id="V8M-xh-tx8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VB5-0E-pue" secondAttribute="trailing" constant="-16" id="fmR-Av-Zr4"/>
+                            <constraint firstItem="Sxh-Ms-dL2" firstAttribute="top" secondItem="VB5-0E-pue" secondAttribute="bottom" id="ge4-yR-Xhy"/>
+                            <constraint firstItem="VB5-0E-pue" firstAttribute="height" secondItem="LZz-Q7-4N5" secondAttribute="height" multiplier="0.5" id="mcy-AR-jtS"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Map" id="Tst-ml-PhN"/>
+                    <navigationItem key="navigationItem" id="IGE-rz-ldC"/>
+                    <connections>
+                        <outlet property="diaryTableView" destination="Sxh-Ms-dL2" id="5aR-W1-7bn"/>
+                        <outlet property="mapView" destination="VB5-0E-pue" id="Iia-uL-cpt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VpM-Gf-nCf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="350" y="1378"/>
         </scene>
     </scenes>
     <resources>

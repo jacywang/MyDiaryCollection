@@ -23,6 +23,8 @@
 		965C41C51B1D02BF00AE6988 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 965C41C41B1D02BF00AE6988 /* libz.dylib */; };
 		965C41C71B1D02C700AE6988 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 965C41C61B1D02C700AE6988 /* libsqlite3.dylib */; };
 		96B3C5D61B1E580B005E904A /* Diary.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B3C5D51B1E580B005E904A /* Diary.m */; };
+		96B3C5D91B1F7432005E904A /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96B3C5D81B1F7432005E904A /* MapViewController.m */; };
+		96B3C5DB1B1F7B73005E904A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96B3C5DA1B1F7B73005E904A /* MapKit.framework */; };
 		9C286FC41B1CDB8500B0EFEE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C286FC31B1CDB8500B0EFEE /* main.m */; };
 		9C286FC71B1CDB8500B0EFEE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C286FC61B1CDB8500B0EFEE /* AppDelegate.m */; };
 		9C286FCA1B1CDB8500B0EFEE /* MyDiaryCollection.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9C286FC81B1CDB8500B0EFEE /* MyDiaryCollection.xcdatamodeld */; };
@@ -66,6 +68,9 @@
 		965C41C61B1D02C700AE6988 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		96B3C5D41B1E580B005E904A /* Diary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Diary.h; sourceTree = "<group>"; };
 		96B3C5D51B1E580B005E904A /* Diary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Diary.m; sourceTree = "<group>"; };
+		96B3C5D71B1F7432005E904A /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		96B3C5D81B1F7432005E904A /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		96B3C5DA1B1F7B73005E904A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9C286FBE1B1CDB8500B0EFEE /* MyDiaryCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyDiaryCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C286FC21B1CDB8500B0EFEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C286FC31B1CDB8500B0EFEE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -95,6 +100,7 @@
 			files = (
 				965C41C71B1D02C700AE6988 /* libsqlite3.dylib in Frameworks */,
 				965C41C51B1D02BF00AE6988 /* libz.dylib in Frameworks */,
+				96B3C5DB1B1F7B73005E904A /* MapKit.framework in Frameworks */,
 				965C41C31B1D02B500AE6988 /* SystemConfiguration.framework in Frameworks */,
 				965C41C11B1D02AF00AE6988 /* StoreKit.framework in Frameworks */,
 				965C41BF1B1D02A800AE6988 /* Security.framework in Frameworks */,
@@ -122,6 +128,7 @@
 		965C41AD1B1D022600AE6988 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				96B3C5DA1B1F7B73005E904A /* MapKit.framework */,
 				965C41C61B1D02C700AE6988 /* libsqlite3.dylib */,
 				965C41C41B1D02BF00AE6988 /* libz.dylib */,
 				965C41C21B1D02B500AE6988 /* SystemConfiguration.framework */,
@@ -170,6 +177,8 @@
 				965C41A81B1CFF5300AE6988 /* LoginViewController.m */,
 				9C286FCB1B1CDB8500B0EFEE /* DiaryEntryViewController.h */,
 				9C286FCC1B1CDB8500B0EFEE /* DiaryEntryViewController.m */,
+				96B3C5D71B1F7432005E904A /* MapViewController.h */,
+				96B3C5D81B1F7432005E904A /* MapViewController.m */,
 				9CDFE8331B1E6420001A4873 /* CollectionViewController.h */,
 				9CDFE8341B1E6420001A4873 /* CollectionViewController.m */,
 				9CDFE8361B1E6673001A4873 /* CollectionViewCell.h */,
@@ -324,6 +333,7 @@
 				9C286FC41B1CDB8500B0EFEE /* main.m in Sources */,
 				965C41A91B1CFF5300AE6988 /* LoginViewController.m in Sources */,
 				9CC8AF7B1B1E73C0009EE7A0 /* DiaryDetailViewController.m in Sources */,
+				96B3C5D91B1F7432005E904A /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
