@@ -17,12 +17,6 @@
     NSString *dateString = [formatter stringFromDate:date];
     self.dateLabel.text = dateString;
     
-    PFFile *imageFile = diary[@"imageFile"];
-    [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-        if (!error) {
-            self.diaryImageView.image = [UIImage imageWithData:data];
-        }
-    }];
 }
 
 

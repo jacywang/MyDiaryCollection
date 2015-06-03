@@ -84,8 +84,8 @@
     
     PFGeoPoint *point = [PFGeoPoint geoPointWithLatitude:self.userLocation.coordinate.latitude longitude:self.userLocation.coordinate.longitude];
     
-    fileData = UIImagePNGRepresentation(self.diaryImage);
-    fileName = @"image.png";
+    fileData = UIImageJPEGRepresentation(self.diaryImage, 0.85);
+    fileName = @"image.jpg";
     
     PFFile *file = [PFFile fileWithName:fileName data:fileData];
     [file saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
@@ -164,7 +164,8 @@
 #pragma mark - UIImagePickerControllerDelegate
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    self.diaryImage = info[UIImagePickerControllerOriginalImage];
+    self.diaryImage = info[UIImagePickerControllerEditedImage];
+
     [self dismissViewControllerAnimated:NO completion:nil];
 }
 

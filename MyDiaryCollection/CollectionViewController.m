@@ -9,6 +9,7 @@
 #import "CollectionViewController.h"
 #import "CollectionViewCell.h"
 #import "Diary.h"
+#import "DiaryDetailViewController.h"
 
 @interface CollectionViewController ()
 
@@ -24,7 +25,7 @@
     [super viewWillAppear:animated];
     
     PFQuery *query = [PFQuery queryWithClassName:@"Diary"];
-    [query orderByAscending:@"createdAt"];
+    [query orderByDescending:@"createdAt"];
     [query whereKey:@"userID" equalTo:[[PFUser currentUser] objectId]];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error) {
@@ -56,38 +57,31 @@
     
     [cell configureCell:diary];
     
+    PFFile *imageFile = diary[@"imageFile"];
+    [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        if (!error) {
+            
+            cell.diaryImageView.image = [UIImage imageWithData:data];
+            
+        }
+        
+    }];
+    
     return cell;
 }
 
-#pragma mark <UICollectionViewDelegate>
-
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
-}
-*/
-
-/*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-*/
-
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([[segue identifier] isEqualToString:@"showDiaryDetail"]) {
+        
+        NSIndexPath *indexPath = [[self.collectionView indexPathsForSelectedItems] firstObject];
+        Diary *diary = [self.diaryCollection objectAtIndex:indexPath.row];
+        DiaryDetailViewController *diaryDetailViewController = segue.destinationViewController;
+        diaryDetailViewController.diary = diary;
+    }
+    
 }
 
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
-}
 
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
-}
-*/
 
 @end
