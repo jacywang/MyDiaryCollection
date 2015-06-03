@@ -11,6 +11,7 @@
 
 
 @interface MapViewController ()
+
 @property (nonatomic, assign) BOOL isInitialLocation;
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
@@ -19,6 +20,7 @@
 
 @property (nonatomic, strong) NSMutableArray *diaryCollection;
 
+@property (nonatomic, strong) NSMutableArray *selectedDiaryCollection;
 
 @end
 
@@ -81,11 +83,8 @@
             [marker setTitle: placemark.name];
             [self.mapView addAnnotation:marker];
         }];
-        
-
     }
 }
-
 
 #pragma mark - CLLocationManager Delegate
 
@@ -131,7 +130,26 @@
     return pinView;
 }
 
-
+-(void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
+    PFGeoPoint *point = [PFGeoPoint geoPointWithLatitude:[[view annotation] coordinate].latitude longitude:[[view annotation] coordinate].longitude];
+    
+    self.selectedDiaryCollection = [[NSMutableArray alloc] init];
+    
+    NSLog(@"annotation latitude: %f", [[view annotation] coordinate].latitude);
+    NSLog(@"point latitude: %f", point.latitude);
+    
+    for (Diary *diary in self.diaryCollection) {
+        NSLog(@"point latitude: %f", point.latitude);
+        NSLog(@"point longitude: %f", point.longitude);
+        NSLog(@"diary location latitude: %f", diary.location.latitude);
+        NSLog(@"diary location longitude: %f", diary.location.longitude);
+        if (diary.location.latitude == point.latitude && diary.location.longitude == point.longitude) {
+            [self.selectedDiaryCollection addObject:diary];
+        }
+    }
+    
+    [self.diaryTableView reloadData];
+}
 
 #pragma mark - TableView DataSource
 
@@ -140,15 +158,13 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return self.selectedDiaryCollection.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    
-    
-    return nil;
-    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    cell.textLabel.text = [self.selectedDiaryCollection[indexPath.row] diaryText];
+    return cell;
 }
 
 @end
