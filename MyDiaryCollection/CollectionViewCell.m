@@ -16,7 +16,6 @@
     [formatter setDateFormat:@"MMM dd, yyyy"];
     NSString *dateString = [formatter stringFromDate:date];
     self.dateLabel.text = dateString;
-    
 }
 
 

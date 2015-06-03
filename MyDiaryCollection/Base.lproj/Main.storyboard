@@ -140,7 +140,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zhx-ID-gPI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2218" y="1131"/>
+            <point key="canvasLocation" x="2178" y="1077"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0Nv-yZ-2G8">
@@ -245,7 +245,7 @@
                     <connections>
                         <segue destination="L84-m2-T3u" kind="relationship" relationship="viewControllers" id="dqt-oi-9SG"/>
                         <segue destination="EWz-PI-EES" kind="relationship" relationship="viewControllers" id="jTY-xW-49j"/>
-                        <segue destination="ehk-V1-km6" kind="relationship" relationship="viewControllers" id="YrN-21-YAE"/>
+                        <segue destination="H1n-TV-iTq" kind="relationship" relationship="viewControllers" id="YrN-21-YAE"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CwZ-OV-fG3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -415,7 +415,7 @@
             </objects>
             <point key="canvasLocation" x="350" y="707"/>
         </scene>
-        <!--Map-->
+        <!--Map View Controller-->
         <scene sceneID="d4w-Uj-BCs">
             <objects>
                 <viewController id="ehk-V1-km6" customClass="MapViewController" sceneMemberID="viewController">
@@ -434,11 +434,28 @@
                                 <rect key="frame" x="0.0" y="300" width="600" height="251"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="Sbu-PW-T7P">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="vpb-rH-bEJ" detailTextLabel="6sX-Nd-I24" style="IBUITableViewCellStyleSubtitle" id="Sbu-PW-T7P">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Sbu-PW-T7P" id="8pR-O9-hpN">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vpb-rH-bEJ">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6sX-Nd-I24">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="AsI-Vh-kbc" kind="show" identifier="showDiaryDetailFromMap" id="rfi-z7-LT4"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
@@ -460,7 +477,6 @@
                             <constraint firstItem="VB5-0E-pue" firstAttribute="height" secondItem="LZz-Q7-4N5" secondAttribute="height" multiplier="0.5" id="mcy-AR-jtS"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" id="Tst-ml-PhN"/>
                     <navigationItem key="navigationItem" id="IGE-rz-ldC"/>
                     <connections>
                         <outlet property="diaryTableView" destination="Sxh-Ms-dL2" id="5aR-W1-7bn"/>
@@ -469,10 +485,32 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VpM-Gf-nCf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1162" y="1378"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="zSX-cR-NiU">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="H1n-TV-iTq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" id="Tst-ml-PhN"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NeD-TV-1Nm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ehk-V1-km6" kind="relationship" relationship="rootViewController" id="n95-LC-JUC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gqo-YN-yIr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="350" y="1378"/>
         </scene>
     </scenes>
     <resources>
         <image name="icn_picture" width="24" height="24"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="rfi-z7-LT4"/>
+    </inferredMetricsTieBreakers>
 </document>

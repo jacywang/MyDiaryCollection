@@ -8,6 +8,7 @@
 
 #import "MapViewController.h"
 #import "Diary.h"
+#import "DiaryDetailViewController.h"
 
 
 @interface MapViewController ()
@@ -63,6 +64,14 @@
             [self addAnnotationView];
         }
     }];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showDiaryDetailFromMap"]) {
+        DiaryDetailViewController *diaryDetailViewController = (DiaryDetailViewController *)segue.destinationViewController;
+        Diary *selectedDiary = self.selectedDiaryCollection[[[self.diaryTableView indexPathForSelectedRow] row]];
+        diaryDetailViewController.diary = selectedDiary;
+    }
 }
 
 -(void)addAnnotationView {
@@ -163,7 +172,36 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    cell.textLabel.text = [self.selectedDiaryCollection[indexPath.row] diaryText];
+    Diary *diary = self.selectedDiaryCollection[indexPath.row];
+    
+    PFFile *imageFile = diary[@"imageFile"];
+    [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        if (!error) {
+            
+            cell.imageView.image = [UIImage imageWithData:data];
+            
+        }
+        
+    }];
+    
+    NSDate *date = [diary valueForKey:@"createdAt"];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MMM dd, yyyy"];
+    NSString *dateString = [formatter stringFromDate:date];
+    
+    cell.textLabel.text = dateString;
+    
+    PFGeoPoint *point = [diary valueForKey:@"location"];
+    
+    CLLocation *location = [[CLLocation alloc] initWithLatitude:point.latitude longitude:point.longitude];
+    CLGeocoder *geocode = [[CLGeocoder alloc] init];
+    [geocode reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
+        
+        CLPlacemark *placemark = [placemarks firstObject];
+        cell.detailTextLabel.text = placemark.name;
+        
+    }];
+
     return cell;
 }
 
