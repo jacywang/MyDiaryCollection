@@ -78,6 +78,8 @@
         Diary *diary = [self.diaryCollection objectAtIndex:indexPath.row];
         DiaryDetailViewController *diaryDetailViewController = segue.destinationViewController;
         diaryDetailViewController.diary = diary;
+        
+        diaryDetailViewController.hidesBottomBarWhenPushed = YES;
     }
     
 }

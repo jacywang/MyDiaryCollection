@@ -41,20 +41,21 @@
         
         [self.imagePickerButton setImage:self.diaryImage forState:UIControlStateNormal];
         
-        self.locationManager = [[CLLocationManager alloc] init];
-        [self.locationManager requestWhenInUseAuthorization];
-        self.locationManager.delegate = self;
-        self.locationManager.desiredAccuracy = 50;
-        self.locationManager.distanceFilter = 50;
-        [self.locationManager startUpdatingLocation];
-        
-        self.userLocation = [[CLLocation alloc] init];
         
     } else {
         
         [self.imagePickerButton setImage:[UIImage imageNamed:@"icn_picture"] forState:UIControlStateNormal];
-        
+        self.diaryImage = [UIImage imageNamed:@"icn_picture"];
     }
+    
+    self.locationManager = [[CLLocationManager alloc] init];
+    [self.locationManager requestWhenInUseAuthorization];
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = 50;
+    self.locationManager.distanceFilter = 50;
+    [self.locationManager startUpdatingLocation];
+    
+    self.userLocation = [[CLLocation alloc] init];
     
     [self.imagePickerButton setContentMode:UIViewContentModeScaleAspectFit];
     

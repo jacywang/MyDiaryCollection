@@ -71,6 +71,8 @@
         DiaryDetailViewController *diaryDetailViewController = (DiaryDetailViewController *)segue.destinationViewController;
         Diary *selectedDiary = self.selectedDiaryCollection[[[self.diaryTableView indexPathForSelectedRow] row]];
         diaryDetailViewController.diary = selectedDiary;
+        
+        diaryDetailViewController.hidesBottomBarWhenPushed = YES;
     }
 }
 
