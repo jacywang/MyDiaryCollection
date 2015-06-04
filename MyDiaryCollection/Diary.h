@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface Diary : PFObject<PFSubclassing>
 
@@ -19,7 +20,13 @@
 
 @property (nonatomic, strong) NSString *userID;
 
+@property (nonatomic, strong) UIImage *image;
+
 
 + (NSString *)parseClassName;
+
+-(NSString *)convertDateToString;
+
+-(CLLocation *)convertGeoPointToCLLocation;
 
 @end

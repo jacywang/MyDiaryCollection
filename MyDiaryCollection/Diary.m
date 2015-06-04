@@ -9,6 +9,7 @@
 #import "Diary.h"
 #import <Parse/PFObject+Subclass.h>
 
+
 @implementation Diary
 
 @dynamic diaryText;
@@ -18,6 +19,8 @@
 @dynamic location;
 
 @dynamic userID;
+
+@synthesize image;
 
 
 +(void)load {
@@ -30,6 +33,40 @@
     
     return @"Diary";
     
+}
+
+-(NSString *)convertDateToString {
+    
+    NSDate *date = [self valueForKey:@"createdAt"];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MMM dd, yyyy"];
+    NSString *dateString = [formatter stringFromDate:date];
+    
+    return dateString;
+    
+}
+
+-(CLLocation *)convertGeoPointToCLLocation {
+    
+    PFGeoPoint *point = [self valueForKey:@"location"];
+    
+    CLLocation *location = [[CLLocation alloc] initWithLatitude:point.latitude longitude:point.longitude];
+
+    return location;
+
+}
+
+-(void)downloadImage {
+    
+    PFFile *imageFile = self[@"imageFile"];
+    [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        if (!error) {
+            
+            self.image = [UIImage imageWithData:data];
+            
+        }
+        
+    }];
 }
 
 @end

@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>34950F9A-92EC-448A-B847-57F06090E756</string>
 	<key>IDESourceControlProjectName</key>
-	<string>MyDiaryCollection</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>645A5D0D74CCC3FB1F1EC246B1719DF319E6B115</key>
 		<string>https://github.com/jacywang/MyDiaryCollection.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>MyDiaryCollection.xcodeproj</string>
+	<string>MyDiaryCollection.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>645A5D0D74CCC3FB1F1EC246B1719DF319E6B115</key>

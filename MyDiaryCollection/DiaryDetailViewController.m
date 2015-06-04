@@ -33,12 +33,7 @@
 
 -(void)configure {
     
-    NSDate *date = [self.diary valueForKey:@"createdAt"];
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"MMM dd, yyyy"];
-    NSString *dateString = [formatter stringFromDate:date];
-    
-    self.title = dateString;
+    self.title = [self.diary convertDateToString];
     self.diaryTextView.text = [self.diary valueForKey:@"diaryText"];
 
     PFFile *imageFile = self.diary[@"imageFile"];
@@ -50,12 +45,9 @@
         }
         
     }];
-    
-    PFGeoPoint *point = [self.diary valueForKey:@"location"];
-    
-    CLLocation *location = [[CLLocation alloc] initWithLatitude:point.latitude longitude:point.longitude];
+
     CLGeocoder *geocode = [[CLGeocoder alloc] init];
-    [geocode reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
+    [geocode reverseGeocodeLocation:[self.diary convertGeoPointToCLLocation] completionHandler:^(NSArray *placemarks, NSError *error) {
         
         CLPlacemark *placemark = [placemarks firstObject];
         self.addressLabel.text = placemark.name;

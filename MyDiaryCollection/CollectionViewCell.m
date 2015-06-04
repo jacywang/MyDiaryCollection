@@ -11,11 +11,9 @@
 @implementation CollectionViewCell
 
 - (void)configureCell:(Diary *)diary {
-    NSDate *date = [diary valueForKey:@"createdAt"];
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"MMM dd, yyyy"];
-    NSString *dateString = [formatter stringFromDate:date];
-    self.dateLabel.text = dateString;
+    
+    self.dateLabel.text = [diary convertDateToString];
+
 }
 
 
