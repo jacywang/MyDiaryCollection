@@ -271,7 +271,6 @@
 				TargetAttributes = {
 					9C286FBD1B1CDB8500B0EFEE = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 3T36RCW5R7;
 					};
 					9C286FD91B1CDB8500B0EFEE = {
 						CreatedOnToolsVersion = 6.2;
@@ -492,7 +491,8 @@
 		9C286FE81B1CDB8500B0EFEE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ian Tsai (T9NPS2EW44)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -511,7 +511,8 @@
 		9C286FE91B1CDB8500B0EFEE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ian Tsai (T9NPS2EW44)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

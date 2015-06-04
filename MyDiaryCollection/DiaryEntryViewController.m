@@ -78,11 +78,11 @@
 
 - (IBAction)saveDiaryButtonPressed:(UIButton *)sender {
     
-    
+
     NSData *fileData;
     NSString *fileName;
     
-    PFGeoPoint *point = [PFGeoPoint geoPointWithLatitude:self.userLocation.coordinate.latitude longitude:self.userLocation.coordinate.longitude];
+    PFGeoPoint *point = [PFGeoPoint geoPointWithLatitude:[self roundToThreeDigits:self.userLocation.coordinate.latitude] longitude:[self roundToThreeDigits:self.userLocation.coordinate.longitude]];
     
     fileData = UIImageJPEGRepresentation(self.diaryImage, 0.85);
     fileName = @"image.jpg";
@@ -133,9 +133,12 @@
         }
         
     }];
-    
+  
+}
 
+-(double)roundToThreeDigits:(double)num {
     
+    return (int)(roundf(num * 1000.0)) / 1000.0;
     
 }
 
