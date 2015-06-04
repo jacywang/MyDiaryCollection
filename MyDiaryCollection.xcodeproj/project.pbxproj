@@ -491,8 +491,8 @@
 		9C286FE81B1CDB8500B0EFEE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ian Tsai (T9NPS2EW44)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -504,6 +504,7 @@
 				INFOPLIST_FILE = MyDiaryCollectionTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "20ebf8bb-81ea-4ab4-aaf2-86510b0eb615";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyDiaryCollection.app/MyDiaryCollection";
 			};
 			name = Debug;
@@ -511,8 +512,8 @@
 		9C286FE91B1CDB8500B0EFEE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Ian Tsai (T9NPS2EW44)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -520,6 +521,7 @@
 				INFOPLIST_FILE = MyDiaryCollectionTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "20ebf8bb-81ea-4ab4-aaf2-86510b0eb615";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyDiaryCollection.app/MyDiaryCollection";
 			};
 			name = Release;
