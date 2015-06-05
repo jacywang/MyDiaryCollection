@@ -31,13 +31,13 @@
                                     <action selector="imagePickerButtonPressed:" destination="CpF-yo-CXE" eventType="touchUpInside" id="psn-pc-PvN"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" text="Write here..." translatesAutoresizingMaskIntoConstraints="NO" id="xgj-8B-Af6">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" text="Write here ..." translatesAutoresizingMaskIntoConstraints="NO" id="xgj-8B-Af6">
                                 <rect key="frame" x="144" y="72" width="440" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="AcM-VS-oZQ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -63,7 +63,13 @@
                             <constraint firstItem="ky6-y4-0R3" firstAttribute="top" secondItem="xgj-8B-Af6" secondAttribute="bottom" constant="179" id="K86-kB-2Vd"/>
                             <constraint firstItem="xgj-8B-Af6" firstAttribute="top" secondItem="Bl7-bG-qyy" secondAttribute="bottom" constant="8" id="les-ZH-hGu"/>
                             <constraint firstItem="US4-r0-rc3" firstAttribute="leading" secondItem="Rsw-gU-H3w" secondAttribute="leadingMargin" id="rgS-O0-zCV"/>
+                            <constraint firstItem="xgj-8B-Af6" firstAttribute="height" secondItem="Rsw-gU-H3w" secondAttribute="height" multiplier="0.5" id="sXu-bk-Uj0"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="K86-kB-2Vd"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="s6h-L3-E4s">
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="Yq7-dU-C2W">

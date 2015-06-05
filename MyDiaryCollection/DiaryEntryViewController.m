@@ -20,6 +20,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    self.diaryTextView.layer.borderWidth = 1.0f;
+    self.diaryTextView.layer.borderColor = [[UIColor grayColor] CGColor];
+    self.diaryTextView.layer.cornerRadius = 5.0f;
+    
     PFUser *currentUser = [PFUser currentUser];
 
     if (currentUser) {
