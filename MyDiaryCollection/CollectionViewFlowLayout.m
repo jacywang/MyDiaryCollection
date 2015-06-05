@@ -42,30 +42,25 @@
         attributes.zIndex = 1;
         
         // Cells
-        [CollectionViewFlowLayout tweakCellAttributes:attributes];
+//        [CollectionViewFlowLayout tweakCellAttributes:attributes];
     }
     
     return allAttributes;
 }
 
-+ (void)tweakCellAttributes:(UICollectionViewLayoutAttributes*)cellAttributes {
-    
-    if (cellAttributes.representedElementCategory != UICollectionElementCategoryCell) return;
-    
-    // Offset center by bounded random amount
-    double centerXOffset = arc4random_uniform(CENTER_OFFSET_BOUND + 1) - (CENTER_OFFSET_BOUND / 2.0);
-    double centerYOffset = arc4random_uniform(CENTER_OFFSET_BOUND + 1) - (CENTER_OFFSET_BOUND / 2.0);
-    cellAttributes.center = CGPointMake(cellAttributes.center.x + centerXOffset,
-                                        cellAttributes.center.y + centerYOffset);
-    
-    // Rotate by bounded random angle
-    double rotationAngle = arc4random_uniform(ROTATION_ANGLE_BOUND + 1) - (ROTATION_ANGLE_BOUND / 2.0);
-    cellAttributes.transform = CGAffineTransformMakeRotation(RADIANS(rotationAngle));
-}
-
-- (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)oldBounds
-{
-    return YES;
-}
+//+ (void)tweakCellAttributes:(UICollectionViewLayoutAttributes*)cellAttributes {
+//    
+//    if (cellAttributes.representedElementCategory != UICollectionElementCategoryCell) return;
+//    
+//    // Offset center by bounded random amount
+//    double centerXOffset = arc4random_uniform(CENTER_OFFSET_BOUND + 1) - (CENTER_OFFSET_BOUND / 2.0);
+//    double centerYOffset = arc4random_uniform(CENTER_OFFSET_BOUND + 1) - (CENTER_OFFSET_BOUND / 2.0);
+//    cellAttributes.center = CGPointMake(cellAttributes.center.x + centerXOffset,
+//                                        cellAttributes.center.y + centerYOffset);
+//    
+//    // Rotate by bounded random angle
+//    double rotationAngle = arc4random_uniform(ROTATION_ANGLE_BOUND + 1) - (ROTATION_ANGLE_BOUND / 2.0);
+//    cellAttributes.transform = CGAffineTransformMakeRotation(RADIANS(rotationAngle));
+//}
 
 @end

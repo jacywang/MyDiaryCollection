@@ -30,6 +30,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    self.currentLocation = nil;
+    self.selectedDiaryCollection = nil;
+    self.diaryCollection = nil;
+    [self.mapView removeAnnotations:self.mapView.annotations];
     
     self.isInitialLocation = NO;
     
@@ -44,13 +53,6 @@
     
     self.mapView.showsUserLocation = YES;
     self.mapView.delegate = self;
-    
-    
-
-}
-
--(void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
     
     PFQuery *query = [PFQuery queryWithClassName:@"Diary"];
     [query orderByDescending:@"createdAt"];
