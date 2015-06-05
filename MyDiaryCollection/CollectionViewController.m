@@ -10,6 +10,7 @@
 #import "CollectionViewCell.h"
 #import "Diary.h"
 #import "DiaryDetailViewController.h"
+#import "CollectionViewFlowLayout.h"
 
 @interface CollectionViewController ()
 
@@ -23,6 +24,9 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    CollectionViewFlowLayout *flowLayout = [[CollectionViewFlowLayout alloc] init];
+    [self.collectionView setCollectionViewLayout:flowLayout];
     
     PFQuery *query = [PFQuery queryWithClassName:@"Diary"];
     [query orderByDescending:@"createdAt"];
