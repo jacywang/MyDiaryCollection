@@ -494,7 +494,7 @@
         <scene sceneID="zSX-cR-NiU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="H1n-TV-iTq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" id="Tst-ml-PhN"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="Geo Fence-25.png" id="Tst-ml-PhN"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="NeD-TV-1Nm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -511,6 +511,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Geo Fence-25.png" width="25" height="25"/>
         <image name="corkboard.jpg" width="4000" height="3000"/>
         <image name="icn_picture" width="24" height="24"/>
     </resources>

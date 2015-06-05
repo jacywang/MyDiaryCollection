@@ -148,14 +148,7 @@
     
     self.selectedDiaryCollection = [[NSMutableArray alloc] init];
     
-    NSLog(@"annotation latitude: %f", [[view annotation] coordinate].latitude);
-    NSLog(@"point latitude: %f", point.latitude);
-    
     for (Diary *diary in self.diaryCollection) {
-        NSLog(@"point latitude: %f", point.latitude);
-        NSLog(@"point longitude: %f", point.longitude);
-        NSLog(@"diary location latitude: %f", diary.location.latitude);
-        NSLog(@"diary location longitude: %f", diary.location.longitude);
         if (diary.location.latitude == point.latitude && diary.location.longitude == point.longitude) {
             [self.selectedDiaryCollection addObject:diary];
         }

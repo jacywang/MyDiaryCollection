@@ -35,6 +35,7 @@
 		9C286FE11B1CDB8500B0EFEE /* MyDiaryCollectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C286FE01B1CDB8500B0EFEE /* MyDiaryCollectionTests.m */; };
 		9CB96E941B211FFB003CE638 /* corkboard.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9CB96E931B211FFB003CE638 /* corkboard.jpg */; };
 		9CB96E971B21201D003CE638 /* CollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CB96E961B21201D003CE638 /* CollectionViewFlowLayout.m */; };
+		9CBCE1511B2225FF00BE0262 /* Geo Fence-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CBCE1501B2225FF00BE0262 /* Geo Fence-25.png */; };
 		9CC8AF7B1B1E73C0009EE7A0 /* DiaryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC8AF7A1B1E73C0009EE7A0 /* DiaryDetailViewController.m */; };
 		9CDFE8351B1E6420001A4873 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDFE8341B1E6420001A4873 /* CollectionViewController.m */; };
 		9CDFE8381B1E6673001A4873 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDFE8371B1E6673001A4873 /* CollectionViewCell.m */; };
@@ -90,6 +91,7 @@
 		9CB96E931B211FFB003CE638 /* corkboard.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = corkboard.jpg; sourceTree = "<group>"; };
 		9CB96E951B21201D003CE638 /* CollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewFlowLayout.h; sourceTree = "<group>"; };
 		9CB96E961B21201D003CE638 /* CollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		9CBCE1501B2225FF00BE0262 /* Geo Fence-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Geo Fence-25.png"; sourceTree = "<group>"; };
 		9CC8AF791B1E73C0009EE7A0 /* DiaryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryDetailViewController.h; sourceTree = "<group>"; };
 		9CC8AF7A1B1E73C0009EE7A0 /* DiaryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryDetailViewController.m; sourceTree = "<group>"; };
 		9CDFE8331B1E6420001A4873 /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 		9C286FC11B1CDB8500B0EFEE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9CBCE1501B2225FF00BE0262 /* Geo Fence-25.png */,
 				9CB96E931B211FFB003CE638 /* corkboard.jpg */,
 				9C286FC21B1CDB8500B0EFEE /* Info.plist */,
 				9C286FC31B1CDB8500B0EFEE /* main.m */,
@@ -312,6 +315,7 @@
 			files = (
 				9C286FD01B1CDB8500B0EFEE /* Main.storyboard in Resources */,
 				9C286FD51B1CDB8500B0EFEE /* LaunchScreen.xib in Resources */,
+				9CBCE1511B2225FF00BE0262 /* Geo Fence-25.png in Resources */,
 				9C286FD21B1CDB8500B0EFEE /* Images.xcassets in Resources */,
 				9CB96E941B211FFB003CE638 /* corkboard.jpg in Resources */,
 			);
