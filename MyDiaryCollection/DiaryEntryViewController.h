@@ -24,6 +24,8 @@
 
 @property (strong, nonatomic) CLLocation *userLocation;
 
+@property (weak, nonatomic) IBOutlet UIButton *saveDiaryButton;
+
 
 - (IBAction)imagePickerButtonPressed:(UIButton *)sender;
 

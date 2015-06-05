@@ -38,6 +38,8 @@
 		9CBCE1511B2225FF00BE0262 /* Geo Fence-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CBCE1501B2225FF00BE0262 /* Geo Fence-25.png */; };
 		9CBCE1531B222DC000BE0262 /* Create New-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CBCE1521B222DC000BE0262 /* Create New-25.png */; };
 		9CBCE1551B22327400BE0262 /* square-individual-nine-7.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CBCE1541B22327400BE0262 /* square-individual-nine-7.png */; };
+		9CBCE1591B224E2000BE0262 /* Camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 9CBCE1581B224E2000BE0262 /* Camera.png */; };
+		9CBCE15B1B225F9700BE0262 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9CBCE15A1B225F9700BE0262 /* ParseUI.framework */; };
 		9CC8AF7B1B1E73C0009EE7A0 /* DiaryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC8AF7A1B1E73C0009EE7A0 /* DiaryDetailViewController.m */; };
 		9CDFE8351B1E6420001A4873 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDFE8341B1E6420001A4873 /* CollectionViewController.m */; };
 		9CDFE8381B1E6673001A4873 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CDFE8371B1E6673001A4873 /* CollectionViewCell.m */; };
@@ -96,6 +98,8 @@
 		9CBCE1501B2225FF00BE0262 /* Geo Fence-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Geo Fence-25.png"; sourceTree = "<group>"; };
 		9CBCE1521B222DC000BE0262 /* Create New-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Create New-25.png"; sourceTree = "<group>"; };
 		9CBCE1541B22327400BE0262 /* square-individual-nine-7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "square-individual-nine-7.png"; sourceTree = "<group>"; };
+		9CBCE1581B224E2000BE0262 /* Camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Camera.png; sourceTree = "<group>"; };
+		9CBCE15A1B225F9700BE0262 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ParseUI.framework; path = ../../../../Downloads/ParseUI.framework; sourceTree = "<group>"; };
 		9CC8AF791B1E73C0009EE7A0 /* DiaryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiaryDetailViewController.h; sourceTree = "<group>"; };
 		9CC8AF7A1B1E73C0009EE7A0 /* DiaryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiaryDetailViewController.m; sourceTree = "<group>"; };
 		9CDFE8331B1E6420001A4873 /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
@@ -109,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CBCE15B1B225F9700BE0262 /* ParseUI.framework in Frameworks */,
 				965C41C71B1D02C700AE6988 /* libsqlite3.dylib in Frameworks */,
 				965C41C51B1D02BF00AE6988 /* libz.dylib in Frameworks */,
 				96B3C5DB1B1F7B73005E904A /* MapKit.framework in Frameworks */,
@@ -139,6 +144,7 @@
 		965C41AD1B1D022600AE6988 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				9CBCE15A1B225F9700BE0262 /* ParseUI.framework */,
 				96B3C5DA1B1F7B73005E904A /* MapKit.framework */,
 				965C41C61B1D02C700AE6988 /* libsqlite3.dylib */,
 				965C41C41B1D02BF00AE6988 /* libz.dylib */,
@@ -212,6 +218,7 @@
 		9C286FC11B1CDB8500B0EFEE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9CBCE1581B224E2000BE0262 /* Camera.png */,
 				9CBCE1541B22327400BE0262 /* square-individual-nine-7.png */,
 				9CBCE1521B222DC000BE0262 /* Create New-25.png */,
 				9CBCE1501B2225FF00BE0262 /* Geo Fence-25.png */,
@@ -325,6 +332,7 @@
 				9CBCE1511B2225FF00BE0262 /* Geo Fence-25.png in Resources */,
 				9CBCE1551B22327400BE0262 /* square-individual-nine-7.png in Resources */,
 				9C286FD21B1CDB8500B0EFEE /* Images.xcassets in Resources */,
+				9CBCE1591B224E2000BE0262 /* Camera.png in Resources */,
 				9CB96E941B211FFB003CE638 /* corkboard.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,6 +489,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MyDiaryCollection",
+					/Users/jianwang/Downloads,
 				);
 				INFOPLIST_FILE = MyDiaryCollection/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
@@ -500,6 +509,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MyDiaryCollection",
+					/Users/jianwang/Downloads,
 				);
 				INFOPLIST_FILE = MyDiaryCollection/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;

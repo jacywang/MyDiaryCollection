@@ -24,6 +24,12 @@
     self.diaryTextView.layer.borderColor = [[UIColor grayColor] CGColor];
     self.diaryTextView.layer.cornerRadius = 5.0f;
     
+    self.imagePickerButton.layer.borderColor = [[UIColor grayColor] CGColor];
+    self.imagePickerButton.layer.borderWidth = 1.0f;
+    self.imagePickerButton.layer.cornerRadius = 5.0f;
+    
+    self.saveDiaryButton.layer.cornerRadius = 5.0f;
+    
     PFUser *currentUser = [PFUser currentUser];
 
     if (currentUser) {
@@ -48,8 +54,10 @@
         
     } else {
         
-        [self.imagePickerButton setImage:[UIImage imageNamed:@"icn_picture"] forState:UIControlStateNormal];
-        self.diaryImage = [UIImage imageNamed:@"icn_picture"];
+        UIImage *cameraImage = [UIImage imageNamed:@"Camera"];
+        
+        [self.imagePickerButton setImage:cameraImage forState:UIControlStateNormal];
+        self.diaryImage = cameraImage;
     }
     
     self.locationManager = [[CLLocationManager alloc] init];

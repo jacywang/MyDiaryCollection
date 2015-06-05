@@ -20,8 +20,6 @@
 
 @dynamic userID;
 
-@synthesize image;
-
 
 +(void)load {
     
@@ -54,19 +52,6 @@
 
     return location;
 
-}
-
--(void)downloadImage {
-    
-    PFFile *imageFile = self[@"imageFile"];
-    [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-        if (!error) {
-            
-            self.image = [UIImage imageWithData:data];
-            
-        }
-        
-    }];
 }
 
 @end

@@ -22,6 +22,10 @@
     self.layer.shadowRadius = 8.0;
     self.layer.shadowOpacity = 1.0;
     self.layer.masksToBounds = NO;
+    
+    self.diaryImageView.image = [UIImage imageNamed:@"icn_picture"]; // placeholder image
+    self.diaryImageView.file = diary[@"imageFile"]; // remote image
+    [self.diaryImageView loadInBackground];
 
 }
 

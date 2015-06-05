@@ -39,8 +39,36 @@
         else {
             self.diaryCollection = [NSMutableArray arrayWithArray:objects];
             [self.collectionView reloadData];
+            
+//            [UIView animateWithDuration:0 animations:^{
+//                [self.collectionView performBatchUpdates:^{
+//                    [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
+//                } completion:nil];
+//            }];
+            
+            [UIView setAnimationsEnabled:NO];
+            
+            [self.collectionView performBatchUpdates:^{
+                [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
+            } completion:^(BOOL finished) {
+                [UIView setAnimationsEnabled:YES];
+            }];
         }
     }];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([[segue identifier] isEqualToString:@"showDiaryDetail"]) {
+        
+        NSIndexPath *indexPath = [[self.collectionView indexPathsForSelectedItems] firstObject];
+        Diary *diary = [self.diaryCollection objectAtIndex:indexPath.row];
+        DiaryDetailViewController *diaryDetailViewController = segue.destinationViewController;
+        diaryDetailViewController.diary = diary;
+        
+        diaryDetailViewController.hidesBottomBarWhenPushed = YES;
+    }
+    
 }
 
 #pragma mark <UICollectionViewDataSource>
@@ -62,33 +90,7 @@
     
     [cell configureCell:diary];
     
-    PFFile *imageFile = diary[@"imageFile"];
-    [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-        if (!error) {
-            
-            cell.diaryImageView.image = [UIImage imageWithData:data];
-            
-        }
-        
-    }];
-    
     return cell;
 }
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    if ([[segue identifier] isEqualToString:@"showDiaryDetail"]) {
-        
-        NSIndexPath *indexPath = [[self.collectionView indexPathsForSelectedItems] firstObject];
-        Diary *diary = [self.diaryCollection objectAtIndex:indexPath.row];
-        DiaryDetailViewController *diaryDetailViewController = segue.destinationViewController;
-        diaryDetailViewController.diary = diary;
-        
-        diaryDetailViewController.hidesBottomBarWhenPushed = YES;
-    }
-    
-}
-
-
 
 @end

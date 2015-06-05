@@ -20,8 +20,6 @@
 
 @property (nonatomic, strong) NSString *userID;
 
-@property (nonatomic, strong) UIImage *image;
-
 
 + (NSString *)parseClassName;
 

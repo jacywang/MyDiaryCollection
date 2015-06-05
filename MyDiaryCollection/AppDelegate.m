@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
 #import "Diary.h"
 
 @interface AppDelegate ()
@@ -25,6 +26,7 @@
     [Parse enableLocalDatastore];
     [Parse setApplicationId:@"ZMXpo8HJZBUrVRHvVYmre1bXrPhg7jWK5kGpdehJ"
                   clientKey:@"MEmZeN3I5QxKjyvns1LjIh9hqKPQmok57lsYz428"];
+    [PFImageView class];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
     return YES;
