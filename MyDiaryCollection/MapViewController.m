@@ -39,6 +39,7 @@
     self.selectedDiaryCollection = nil;
     self.diaryCollection = nil;
     [self.mapView removeAnnotations:self.mapView.annotations];
+    [self.diaryTableView reloadData];
     
     self.isInitialLocation = NO;
     

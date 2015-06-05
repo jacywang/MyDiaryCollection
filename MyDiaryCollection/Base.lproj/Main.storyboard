@@ -172,7 +172,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vhp-Jc-h9E">
                                 <rect key="frame" x="16" y="114" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bGN-7t-5KP">
                                 <rect key="frame" x="16" y="152" width="568" height="30"/>
@@ -255,7 +255,7 @@
         <scene sceneID="byt-dS-ajb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="L84-m2-T3u" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Create" id="bdx-q7-VEe"/>
+                    <tabBarItem key="tabBarItem" title="Create" image="Create New-25.png" id="bdx-q7-VEe"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="S6s-vB-GIf">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -403,7 +403,7 @@
         <scene sceneID="Yej-qc-LvA">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EWz-PI-EES" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Collection" id="wp8-Qx-DfY"/>
+                    <tabBarItem key="tabBarItem" title="Collection" image="square-individual-nine-7.png" id="wp8-Qx-DfY"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Liq-Ai-Ay4">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -511,9 +511,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Create New-25.png" width="25" height="25"/>
         <image name="Geo Fence-25.png" width="25" height="25"/>
         <image name="corkboard.jpg" width="4000" height="3000"/>
         <image name="icn_picture" width="24" height="24"/>
+        <image name="square-individual-nine-7.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="tPQ-t9-AVz"/>
