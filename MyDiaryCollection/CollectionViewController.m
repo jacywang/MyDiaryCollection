@@ -20,14 +20,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-}
-
--(void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
     
     CollectionViewFlowLayout *flowLayout = [[CollectionViewFlowLayout alloc] init];
     [self.collectionView setCollectionViewLayout:flowLayout];
     
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
     PFQuery *query = [PFQuery queryWithClassName:@"Diary"];
     [query orderByDescending:@"createdAt"];
     [query whereKey:@"userID" equalTo:[[PFUser currentUser] objectId]];

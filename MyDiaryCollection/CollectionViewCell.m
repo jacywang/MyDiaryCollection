@@ -14,6 +14,11 @@
     
     self.dateLabel.text = [diary convertDateToString];
 
+//    self.layer.masksToBounds = NO;
+//    self.layer.shadowColor = [UIColor blackColor].CGColor;
+//    self.layer.shadowRadius = 5.0f;
+//    self.layer.shadowOffset = CGSizeZero;
+
 }
 
 
