@@ -27,4 +27,6 @@
 
 -(CLLocation *)convertGeoPointToCLLocation;
 
+-(NSString *)retrieveMonthHeaderString;
+
 @end

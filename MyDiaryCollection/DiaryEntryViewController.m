@@ -222,4 +222,12 @@
     NSLog(@"Error %@", [error localizedDescription]);
 }
 
+#pragma mark - UITextViewDelegate
+
+-(void)textViewDidBeginEditing:(UITextView *)textView {
+    if ([textView.text isEqualToString:@"Write here ..."]) {
+        textView.text = @"";
+    }
+}
+
 @end

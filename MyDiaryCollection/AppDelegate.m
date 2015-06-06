@@ -21,6 +21,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    [[UINavigationBar appearance] setBackgroundColor:[UIColor greenColor]];
+    [[UINavigationBar appearance] setTranslucent:NO];
+    
+    
     [Diary load];
     
     [Parse enableLocalDatastore];

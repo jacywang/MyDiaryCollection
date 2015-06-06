@@ -44,6 +44,17 @@
     
 }
 
+-(NSString *)retrieveMonthHeaderString {
+    
+    NSDate *date = [self valueForKey:@"createdAt"];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MMM yyyy"];
+    NSString *monthHeaderString = [formatter stringFromDate:date];
+    
+    return monthHeaderString;
+
+}
+
 -(CLLocation *)convertGeoPointToCLLocation {
     
     PFGeoPoint *point = [self valueForKey:@"location"];

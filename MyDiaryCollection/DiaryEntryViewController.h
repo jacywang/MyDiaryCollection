@@ -11,7 +11,7 @@
 
 
 
-@interface DiaryEntryViewController : UIViewController
+@interface DiaryEntryViewController : UIViewController <UITextViewDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UITextView *diaryTextView;

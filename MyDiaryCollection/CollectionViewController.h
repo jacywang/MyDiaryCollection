@@ -12,5 +12,6 @@
 @interface CollectionViewController : UICollectionViewController
 
 @property (nonatomic, strong) NSMutableArray *diaryCollection;
+@property (nonatomic, strong) NSMutableArray *filteredDiaryCollection;
 
 @end
