@@ -13,20 +13,16 @@
 @interface Diary : PFObject<PFSubclassing>
 
 @property (nonatomic, strong) NSString *diaryText;
-
 @property (nonatomic, strong) PFFile *imageFile;
-
 @property (nonatomic, strong) PFGeoPoint *location;
-
 @property (nonatomic, strong) NSString *userID;
 
 
 + (NSString *)parseClassName;
-
 -(NSString *)convertDateToString;
-
 -(CLLocation *)convertGeoPointToCLLocation;
-
 -(NSString *)retrieveMonthHeaderString;
+-(NSString *)convertDateToDay;
+
 
 @end

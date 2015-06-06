@@ -300,9 +300,11 @@
 				TargetAttributes = {
 					9C286FBD1B1CDB8500B0EFEE = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 3T36RCW5R7;
 					};
 					9C286FD91B1CDB8500B0EFEE = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 3T36RCW5R7;
 						TestTargetID = 9C286FBD1B1CDB8500B0EFEE;
 					};
 				};
@@ -498,7 +500,7 @@
 					/Users/jianwang/Downloads,
 				);
 				INFOPLIST_FILE = MyDiaryCollection/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -518,7 +520,7 @@
 					/Users/jianwang/Downloads,
 				);
 				INFOPLIST_FILE = MyDiaryCollection/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -542,7 +544,7 @@
 				INFOPLIST_FILE = MyDiaryCollectionTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "20ebf8bb-81ea-4ab4-aaf2-86510b0eb615";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyDiaryCollection.app/MyDiaryCollection";
 			};
 			name = Debug;
@@ -559,7 +561,7 @@
 				INFOPLIST_FILE = MyDiaryCollectionTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "20ebf8bb-81ea-4ab4-aaf2-86510b0eb615";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MyDiaryCollection.app/MyDiaryCollection";
 			};
 			name = Release;

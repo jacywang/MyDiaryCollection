@@ -12,14 +12,16 @@
 
 - (void)configureCell:(Diary *)diary {
     
-    self.dateLabel.text = [diary convertDateToString];
+    self.dateLabel.text = [diary convertDateToDay];
+    self.dateLabel.clipsToBounds = YES;
+    self.dateLabel.layer.cornerRadius = 5.0f;
     
-    self.layer.borderColor = [UIColor colorWithRed:213.0/255.0f green:210.0/255.0f blue:199.0/255.0f alpha:1.0f].CGColor;
-    self.layer.borderWidth = 1.0f;
+//    self.layer.borderColor = [UIColor colorWithRed:213.0/255.0f green:210.0/255.0f blue:199.0/255.0f alpha:1.0f].CGColor;
+//    self.layer.borderWidth = 1.0f;
     self.layer.cornerRadius = 5.0f;
     self.layer.shadowOffset = CGSizeMake(0, 2);
     self.layer.shadowColor = [UIColor blackColor].CGColor;
-    self.layer.shadowRadius = 8.0;
+    self.layer.shadowRadius = 5.0;
     self.layer.shadowOpacity = 1.0;
     self.layer.masksToBounds = NO;
     

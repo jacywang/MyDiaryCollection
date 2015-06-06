@@ -44,6 +44,17 @@
     
 }
 
+-(NSString *)convertDateToDay {
+    
+    NSDate *date = [self valueForKey:@"createdAt"];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"d"];
+    NSString *dateString = [formatter stringFromDate:date];
+    
+    return dateString;
+    
+}
+
 -(NSString *)retrieveMonthHeaderString {
     
     NSDate *date = [self valueForKey:@"createdAt"];

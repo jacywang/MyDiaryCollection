@@ -38,7 +38,7 @@
                                     <constraint firstAttribute="height" constant="300" id="AcM-VS-oZQ"/>
                                 </constraints>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -114,16 +114,17 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WEt-Sf-4Vt">
                                 <rect key="frame" x="16" y="72" width="568" height="275.5"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0NF-FW-1lj">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0NF-FW-1lj">
                                 <rect key="frame" x="16" y="393" width="568" height="173.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yf4-Lc-mhL">
                                 <rect key="frame" x="284" y="373" width="300" height="18"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -301,7 +302,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <imageView key="backgroundView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="corkboard.jpg" id="Fwk-qC-IlN">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <cells>
@@ -313,12 +314,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="omV-yT-i8g" customClass="PFImageView">
-                                            <rect key="frame" x="8" y="8" width="166" height="116"/>
+                                            <rect key="frame" x="5" y="5" width="172" height="149"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vbT-LS-oSn">
-                                            <rect key="frame" x="8" y="130" width="166" height="17.5"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="vbT-LS-oSn">
+                                            <rect key="frame" x="160" y="137" width="20" height="20"/>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="3Bt-jb-ecl"/>
+                                                <constraint firstAttribute="height" constant="20" id="58x-j1-vaD"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="13"/>
                                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -327,14 +332,21 @@
                                 </view>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="vbT-LS-oSn" firstAttribute="top" secondItem="omV-yT-i8g" secondAttribute="bottom" constant="6" id="FIO-nY-Cv7"/>
-                                    <constraint firstAttribute="bottom" secondItem="omV-yT-i8g" secondAttribute="bottom" constant="35" id="RFP-8T-JzA"/>
-                                    <constraint firstItem="omV-yT-i8g" firstAttribute="top" secondItem="Ny6-lM-9yq" secondAttribute="top" constant="8" id="SMI-oQ-J1g"/>
-                                    <constraint firstAttribute="trailing" secondItem="omV-yT-i8g" secondAttribute="trailing" constant="8" id="TfJ-6z-fGs"/>
-                                    <constraint firstItem="omV-yT-i8g" firstAttribute="leading" secondItem="Ny6-lM-9yq" secondAttribute="leading" constant="8" id="ZQl-Xs-sUp"/>
-                                    <constraint firstItem="vbT-LS-oSn" firstAttribute="leading" secondItem="Ny6-lM-9yq" secondAttribute="leading" constant="8" id="elU-8O-hOF"/>
-                                    <constraint firstAttribute="trailing" secondItem="vbT-LS-oSn" secondAttribute="trailing" constant="8" id="lAT-vY-ncM"/>
+                                    <constraint firstAttribute="bottom" secondItem="omV-yT-i8g" secondAttribute="bottom" constant="5" id="9JP-Rv-7aw"/>
+                                    <constraint firstItem="omV-yT-i8g" firstAttribute="top" secondItem="Ny6-lM-9yq" secondAttribute="top" constant="5" id="I4J-k5-wu5"/>
+                                    <constraint firstItem="omV-yT-i8g" firstAttribute="leading" secondItem="Ny6-lM-9yq" secondAttribute="leading" constant="5" id="NHi-b3-3Iy"/>
+                                    <constraint firstItem="vbT-LS-oSn" firstAttribute="bottom" secondItem="omV-yT-i8g" secondAttribute="bottom" constant="-8" id="QAt-mf-9R6"/>
+                                    <constraint firstItem="vbT-LS-oSn" firstAttribute="trailing" secondItem="omV-yT-i8g" secondAttribute="trailing" constant="-8" id="UoM-bl-Lof"/>
+                                    <constraint firstAttribute="bottom" secondItem="vbT-LS-oSn" secondAttribute="bottom" constant="2" id="cxf-Gk-30b"/>
+                                    <constraint firstAttribute="trailing" secondItem="omV-yT-i8g" secondAttribute="trailing" constant="5" id="xvv-hF-bH5"/>
+                                    <constraint firstAttribute="trailing" secondItem="vbT-LS-oSn" secondAttribute="trailing" constant="2" id="yTz-Hb-9Zd"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="QAt-mf-9R6"/>
+                                        <exclude reference="UoM-bl-Lof"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <outlet property="dateLabel" destination="vbT-LS-oSn" id="NAT-hk-ki8"/>
                                     <outlet property="diaryImageView" destination="omV-yT-i8g" id="a1p-2a-XtN"/>
