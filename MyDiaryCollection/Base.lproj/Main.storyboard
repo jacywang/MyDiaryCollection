@@ -108,7 +108,7 @@
                         <viewControllerLayoutGuide type="bottom" id="cx4-1K-Xab"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="UV8-3Q-5vB">
-                        <rect key="frame" x="0.0" y="64" width="600" height="551"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WEt-Sf-4Vt">

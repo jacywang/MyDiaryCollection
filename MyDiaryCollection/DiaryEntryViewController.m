@@ -33,12 +33,8 @@
     PFUser *currentUser = [PFUser currentUser];
 
     if (currentUser) {
-        
         NSLog(@"%@", currentUser.username);
-        
-    }
-    else {
-        
+    } else {
         [self performSegueWithIdentifier:@"showLogin" sender:self];
     }
     
@@ -48,12 +44,8 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     if (self.diaryImage) {
-        
         [self.imagePickerButton setImage:self.diaryImage forState:UIControlStateNormal];
-        
-        
     } else {
-        
         UIImage *cameraImage = [UIImage imageNamed:@"Camera"];
         
         [self.imagePickerButton setImage:cameraImage forState:UIControlStateNormal];
@@ -70,28 +62,20 @@
     self.userLocation = [[CLLocation alloc] init];
     
     [self.imagePickerButton setContentMode:UIViewContentModeScaleAspectFit];
-    
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
     if ([[segue identifier] isEqualToString:@"showLogin"]) {
-        
         [segue.destinationViewController setHidesBottomBarWhenPushed:YES];
-        
     }
 }
 
 - (IBAction)logoutButtonPressed:(UIBarButtonItem *)sender {
-    
     [PFUser logOut];
     [self performSegueWithIdentifier:@"showLogin" sender:self];
-    
 }
 
 - (IBAction)saveDiaryButtonPressed:(UIButton *)sender {
-    
-
     NSData *fileData;
     NSString *fileName;
     
@@ -107,8 +91,7 @@
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"An error occurred" message:@"Please save your Diary Entry again" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [alertView show];
             
-        }
-        else {
+        } else {
             
             Diary *diary = [Diary object];
             diary.userID = [[PFUser currentUser] objectId];
@@ -118,7 +101,6 @@
             [diary saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                
                 if (succeeded) {
-                    
                     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Success" message:@"Your diary entry is saved" preferredStyle:UIAlertControllerStyleAlert];
                     UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
                     [alertController addAction:defaultAction];
@@ -128,25 +110,15 @@
                         self.diaryImage = nil;
                         
                         [self.tabBarController setSelectedIndex:1];
-                        
                     }];
-                    
-                    
-                    
-                }
-                else {
-                    
+                } else {
                     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"An error occurred" message:@"Please save your Diary Entry again" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
                     [alertView show];
-                    
                 }
-                
-                
+
             }];
         }
-        
     }];
-  
 }
 
 -(double)roundToThreeDigits:(double)num {
@@ -164,17 +136,13 @@
         actionSheet.tag = 0;
         
         [actionSheet showInView:self.view];
-    
-    }
-    else {
-        
+    } else {
         UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
         imagePicker.delegate = self;
         imagePicker.allowsEditing = YES;
         [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
         [self presentViewController:imagePicker animated:YES completion:nil];
     }
-    
 }
 
 #pragma mark - UIImagePickerControllerDelegate

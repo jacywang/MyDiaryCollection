@@ -14,7 +14,6 @@
 @interface CollectionViewCell : UICollectionViewCell
 
 @property (strong, nonatomic) IBOutlet PFImageView *diaryImageView;
-
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
 - (void)configureCell:(Diary *)diary;

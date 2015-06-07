@@ -37,10 +37,8 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error) {
             NSLog(@"Error: %@", error.userInfo);
-        }
-        else {
+        } else {
             self.diaryCollection = [NSMutableArray arrayWithArray:objects];
-            
             self.filteredDiaryCollection = [[NSMutableArray alloc] init];
             
             NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];

@@ -13,26 +13,16 @@
 
 @interface DiaryEntryViewController : UIViewController <UITextViewDelegate>
 
-
 @property (weak, nonatomic) IBOutlet UITextView *diaryTextView;
-
 @property (weak, nonatomic) IBOutlet UIButton *imagePickerButton;
-
 @property (strong, nonatomic) UIImage *diaryImage;
-
 @property (strong, nonatomic) CLLocationManager *locationManager;
-
 @property (strong, nonatomic) CLLocation *userLocation;
-
 @property (weak, nonatomic) IBOutlet UIButton *saveDiaryButton;
 
-
 - (IBAction)imagePickerButtonPressed:(UIButton *)sender;
-
 - (IBAction)logoutButtonPressed:(UIBarButtonItem *)sender;
-
 - (IBAction)saveDiaryButtonPressed:(UIButton *)sender;
-
 
 @end
 

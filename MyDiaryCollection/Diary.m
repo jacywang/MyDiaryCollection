@@ -13,13 +13,9 @@
 @implementation Diary
 
 @dynamic diaryText;
-
 @dynamic imageFile;
-
 @dynamic location;
-
 @dynamic userID;
-
 
 +(void)load {
     

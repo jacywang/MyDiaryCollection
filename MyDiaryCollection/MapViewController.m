@@ -14,13 +14,9 @@
 @interface MapViewController ()
 
 @property (nonatomic, assign) BOOL isInitialLocation;
-
 @property (nonatomic, strong) CLLocationManager *locationManager;
-
 @property (nonatomic, strong) CLLocation *currentLocation;
-
 @property (nonatomic, strong) NSMutableArray *diaryCollection;
-
 @property (nonatomic, strong) NSMutableArray *selectedDiaryCollection;
 
 @end
@@ -61,8 +57,7 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error) {
             NSLog(@"Error: %@", error.userInfo);
-        }
-        else {
+        } else {
             self.diaryCollection = [NSMutableArray arrayWithArray:objects];
             [self addAnnotationView];
         }
@@ -82,7 +77,6 @@
 -(void)addAnnotationView {
     
     for (Diary *diary in self.diaryCollection) {
-        
         PFGeoPoint *point = [diary valueForKey:@"location"];
         
         CLLocation *location = [[CLLocation alloc] initWithLatitude:point.latitude longitude:point.longitude];
@@ -108,7 +102,6 @@
     self.currentLocation = [locations lastObject];
     
     if(!self.isInitialLocation) {
-        
         MKCoordinateRegion startingRegion;
         CLLocationCoordinate2D loc = self.currentLocation.coordinate;
         startingRegion.center = loc;
@@ -117,7 +110,6 @@
         [self.mapView setRegion:startingRegion];
         
         self.isInitialLocation = YES;
-        
     }
     
 }
@@ -175,15 +167,12 @@
     PFFile *imageFile = diary[@"imageFile"];
     [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         if (!error) {
-            
             cell.imageView.image = [UIImage imageWithData:data];
-            
         }
         
     }];
     
     cell.textLabel.text = [diary convertDateToString];
-    
     
     CLGeocoder *geocode = [[CLGeocoder alloc] init];
     [geocode reverseGeocodeLocation:[diary convertGeoPointToCLLocation] completionHandler:^(NSArray *placemarks, NSError *error) {
